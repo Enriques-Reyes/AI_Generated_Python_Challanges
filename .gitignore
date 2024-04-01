@@ -1,2 +1,4 @@
 
 # ignore all.txt files
+contactsScript/contacts.json
+contactsScript/gptcontacts.json
