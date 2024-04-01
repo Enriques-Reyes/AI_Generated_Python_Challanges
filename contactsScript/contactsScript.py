@@ -52,7 +52,9 @@ Select from an option of above:  ''')
                     try:
                         start_range_number = int(input('Enter first number in the range: '))
                         end_range_number = int(input('Enter last number in the range: '))
-                        requested_output = contacts_dictionary['contacts'][start_range_number:end_range_number + 1]
+                        requested_output = contacts_dictionary['contacts'][
+                                           start_range_number:end_range_number + 1
+                                           ]
                         print(json.dumps(requested_output, indent=4))
                         break
                     except ValueError:
@@ -103,7 +105,11 @@ def add_contact():
         contact_phone_number = input("Enter contact's phone number (xxx-xxx-xxxx): ")
         contact_email = input("Enter contact's email (xxx@xxx.com): ")
         contact_email = contact_email.upper()
-        contact_dict = {'name': contact_name, 'phone number': contact_phone_number, 'email': contact_email}
+        contact_dict = {
+            'name': contact_name,
+            'phone number': contact_phone_number,
+            'email': contact_email
+        }
         new_doc_contacts_dict = {'contacts': [{'name': contact_name,
                                               'phone number': contact_phone_number,
                                                'email': contact_email}]}
@@ -124,7 +130,10 @@ def search_contact():
         name_to_search = input('Enter the name you want to search for or [QUIT]: ')
         name_to_search = name_to_search.upper()
         try:
-            name_list = [contact['name'] for contact in contacts_dictionary['contacts']]
+            name_list = [
+                contact['name']
+                for contact in contacts_dictionary['contacts']
+            ]
             if name_to_search == 'QUIT':
                 break
             elif name_to_search not in name_list:
@@ -147,7 +156,10 @@ def update_contact():
         try:
             contact_to_update = input('Enter name of the contact you want to update or [QUIT]: ')
             contact_to_update = contact_to_update.upper()
-            contact_names_list = [contact['name'] for contact in contacts_dictionary['contacts']]
+            contact_names_list = [
+                contact['name']
+                for contact in contacts_dictionary['contacts']
+            ]
             if contact_to_update == 'QUIT':
                 break
             # checks if the specified name has a contact entry in the contacts.json document

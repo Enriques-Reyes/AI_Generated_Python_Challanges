@@ -1,5 +1,6 @@
 import json
 
+
 class ContactManager:
     def __init__(self, filename='gptcontacts.json'):
         self.filename = filename
@@ -49,6 +50,7 @@ class ContactManager:
         for contact in self.contacts:
             print(contact)
 
+
 def main():
     manager = ContactManager()
     actions = {
@@ -72,6 +74,7 @@ def main():
             actions[action]()
         else:
             print("Invalid action.")
+
 
 if __name__ == "__main__":
     main()
