@@ -2,3 +2,4 @@
 # ignore all.txt files
 contactsScript/contacts.json
 contactsScript/gptcontacts.json
+todoListManager/todos.json
